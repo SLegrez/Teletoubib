@@ -28,6 +28,7 @@ gem "font-awesome-rails"
 gem 'devise-i18n'
 gem 'kaminari' # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
 gem 'bootstrap4-kaminari-views' # Bootstrap styling for kaminari
+gem 'cancancan' # Authorization gem
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
