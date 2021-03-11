@@ -2,8 +2,18 @@ class ApplicationController < ActionController::Base
   before_action do
     I18n.locale = :fr
   end
-  before_action :authenticate_patient!
+  # before_action :authenticate_patient!
+  # before_action :authenticate_medecin!
+  before_action :authenticate!
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def authenticate!
+    if current_patient
+      :authenticate_patient!
+    elsif current_medecin
+      :authenticate_medecin!
+    end
+  end
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
