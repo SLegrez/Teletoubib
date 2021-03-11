@@ -1,14 +1,18 @@
 <div class='navbar-top'>
+  <% if patient_signed_in? == false && medecin_signed_in? == false %>
+    <%= link_to "Co-Patient", new_patient_session_path %>
+    <%= link_to "Co-Medecin", new_medecin_session_path %>
+  <% end %>
+  
   <% if patient_signed_in? %>
       <%= link_to "Gestion", edit_patient_registration_path %>
-  <% end %>
-  <% if patient_signed_in? %>
-      <%= link_to "Se déconnecter", destroy_patient_session_path %>
-  <% end %>
-  <% if medecin_signed_in? %>
+  <% elsif medecin_signed_in? %>
       <%= link_to "Gestion", edit_medecin_registration_path %>
   <% end %>
-  <% if medecin_signed_in? %>
+
+  <% if patient_signed_in? %>
+      <%= link_to "Se déconnecter", destroy_patient_session_path %>
+  <% elsif medecin_signed_in? %>
       <%= link_to "Se déconnecter", destroy_medecin_session_path %>
   <% end %>
 </div>
