@@ -11,6 +11,22 @@
         <p><%= t(".currently_waiting_confirmation_for_email", email: resource.unconfirmed_email) %></p>
       <% end %>
 
+      <%= f.input :adresse,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "adresse" } %>
+      <%= f.input :code_postal,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "code_postal" } %>
+      <%= f.input :telephone,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "telephone" } %>
+      <%= f.input :ville,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "ville" } %>
       <%= f.input :password,
                   hint: t(".leave_blank_if_you_don_t_want_to_change_it"),
                   required: false,

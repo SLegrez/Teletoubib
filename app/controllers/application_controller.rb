@@ -2,8 +2,7 @@ class ApplicationController < ActionController::Base
   before_action do
     I18n.locale = :fr
   end
-  # before_action :authenticate_patient!
-  # before_action :authenticate_medecin!
+
   before_action :authenticate!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -22,4 +21,15 @@ class ApplicationController < ActionController::Base
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:prenom, :nom, :date_de_naissance, :adresse, :telephone, :code_postal, :ville])
   end
+
+  protected
+
+  def devise_parameter_sanitizer
+    if resource_class == Medecin
+      Medecin::ParameterSanitizer.new(Medecin, :medecin, params)
+    else
+      super # Use the default one
+    end
+  end
+
 end
