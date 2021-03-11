@@ -148,6 +148,9 @@ fr:
         cancel_my_account: Supprimer mon compte
         currently_waiting_confirmation_for_email: 'Confirmation en attente pour: %{email}'
         leave_blank_if_you_don_t_want_to_change_it: laissez ce champ vide pour le laisser inchangé
+        password: Mot de passe
+        password_confirmation: Confirmez le mot de passe
+        current_password: Mot de passe actuel
         title: Éditer %{resource}
         unhappy: Pas content ?
         update: Modifier
@@ -263,6 +266,9 @@ fr:
         cancel_my_account: Supprimer mon compte
         currently_waiting_confirmation_for_email: 'Confirmation en attente pour: %{email}'
         leave_blank_if_you_don_t_want_to_change_it: laissez ce champ vide pour le laisser inchangé
+        password: Mot de passe
+        password_confirmation: Confirmez le mot de passe
+        current_password: Mot de passe actuel
         title: Éditer %{resource}
         unhappy: Pas content ?
         update: Modifier
