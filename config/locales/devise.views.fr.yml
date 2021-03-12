@@ -88,6 +88,7 @@ fr:
       send_instructions: Vous allez recevoir sous quelques minutes un courriel comportant des instructions pour confirmer votre compte.
       send_paranoid_instructions: Si votre courriel existe sur notre base de données, vous recevrez sous quelques minutes un message avec des instructions pour confirmer votre compte.
     failure:
+      not_approved: "Votre compte n'a pas encore été approuvé par un administrateur."
       already_authenticated: Vous êtes déjà connecté(e).
       inactive: Votre compte n’est pas encore activé.
       invalid: "%{authentication_keys} ou mot de passe incorrect."
@@ -142,6 +143,8 @@ fr:
       updated: Votre mot de passe a bien été modifié. Vous êtes maintenant connecté(e).
       updated_not_active: Votre mot de passe a bien été modifié.
     registrations:
+      medecin:
+        signed_up_but_not_approved: "Vous vous êtes enregistré avec succès mais votre compte n'a pas encore été approuvé par un administrateur."
       destroyed: Au revoir ! Votre compte a bien été supprimé. Nous espérons vous revoir bientôt.
       edit:
         are_you_sure: Êtes-vous sûr ?

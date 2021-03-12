@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_11_161555) do
+ActiveRecord::Schema.define(version: 2021_03_12_090147) do
 
   create_table "medecins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2021_03_11_161555) do
     t.text "adresse"
     t.integer "code_postal"
     t.integer "telephone"
+    t.boolean "approved", default: false, null: false
+    t.index ["approved"], name: "index_medecins_on_approved"
     t.index ["email"], name: "index_medecins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_medecins_on_reset_password_token", unique: true
   end
