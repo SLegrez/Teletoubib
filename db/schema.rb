@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_12_090147) do
+ActiveRecord::Schema.define(version: 2021_03_12_130515) do
 
   create_table "medecins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 2021_03_12_090147) do
     t.index ["approved"], name: "index_medecins_on_approved"
     t.index ["email"], name: "index_medecins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_medecins_on_reset_password_token", unique: true
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.string "type"
+    t.datetime "debut"
+    t.datetime "fin"
+    t.string "lien_visio"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "patients", force: :cascade do |t|
