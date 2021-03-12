@@ -1,7 +1,7 @@
 class MeetingsController < ApplicationController
   before_action :set_meeting, only: [:show, :edit, :update, :destroy]
 
-  def index
+  def dashboard
     @meetings = Meeting.all
   end
   
@@ -29,7 +29,7 @@ class MeetingsController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def destroy
+  def destroy # Destroy a-t-il une utilité ici ? Il faudrait garder une trace des rdv
     @meeting.destroy
 
     redirect_to dashboard_path
@@ -38,7 +38,7 @@ class MeetingsController < ApplicationController
   private
 
   def meeting_params
-    params.require(:meeting).permit(:style, :lien_visio, :debut, :fin)
+    params.require(:meeting).permit(:style, :lien_visio, :debut, :fin, :patient_id, :creneau_id)
   end
 
   def set_meeting
