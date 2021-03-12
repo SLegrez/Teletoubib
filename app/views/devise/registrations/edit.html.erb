@@ -27,10 +27,14 @@
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "telephone" } %>
-      <%= f.input :date_de_naissance,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "date_de_naissance" } %>
+      <%# Field uniquement pour patient %>
+      <% if current_patient %>
+        <%= f.input :date_de_naissance,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "date_de_naissance" } %>
+      <% end %>
+      <%# Fin du field %>
       <%= f.input :password,
                   hint: t(".leave_blank_if_you_don_t_want_to_change_it"),
                   required: false,
