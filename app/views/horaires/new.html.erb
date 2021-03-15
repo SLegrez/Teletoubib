@@ -1,11 +1,11 @@
-<%= simple_form_for(@horaire) do |f| %>
-  <%= f.label :date %>
-  <%= f.date_field :date %>
-  <%= f.label :debut %>
-  <%= f.datetime_field :debut %>
-  <%= f.label :fin %>
-  <%= f.datetime_field :fin %>
-  <%= f.label :disponible %>
-  <%= f.boolean_field :disponible %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for(@horaire) do |f| %>
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+    <%= f.label :debut %>
+    <%= f.datetime_field :debut %>
+    <%= f.label :fin %>
+    <%= f.datetime_field :fin %>
+    <%= f.submit %>
+  <% end %>
+</div>

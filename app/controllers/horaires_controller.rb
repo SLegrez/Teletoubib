@@ -2,7 +2,7 @@ class HorairesController < ApplicationController
   before_action :set_horaire, only: [:show, :edit, :update, :destroy]
 
   def index
-    @horaires = Horaire.all
+    @horaires = current_medecin.horaires
   end
 
   def show
@@ -14,10 +14,13 @@ class HorairesController < ApplicationController
 
   def create # POST
     @horaire = Horaire.new(horaire_params)
-    @horaire.patient_id = current_patient.id
-    @horaire.save
+    @horaire.medecin_id = current_medecin.id
 
-    redirect_to dashboard_path
+    if @horaire.save
+      redirect_to horaires_path
+    else
+      render :new
+    end
   end
 
   def edit # GET
@@ -38,7 +41,7 @@ class HorairesController < ApplicationController
   private
 
   def horaire_params
-    params.require(:horaire).permit(:disponible, :indisponible, :medecin_id)
+    params.require(:horaire).permit(:disponible, :indisponible, :medecin_id, :date, :debut, :fin)
   end
 
   def set_horaire
