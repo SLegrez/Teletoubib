@@ -3,6 +3,13 @@
   <ul class='no-bullet'>
     <% if medecin_signed_in? %>
       <%= link_to 'Horaires', horaires_path %>
+      
+      <%# Début du calendrier %>
+      <%= month_calendar(attribute: :starts_time) do |date, consultations| %>
+        <%= date %>
+      <% end %>
+      <%# Fin du calendrier %>
+
     <% end %>
   </ul>
 </div>

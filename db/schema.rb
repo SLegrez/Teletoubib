@@ -12,17 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2021_03_15_103701) do
 
-  create_table "creneaus", force: :cascade do |t|
-    t.boolean "disponible"
-    t.boolean "indisponible"
-    t.integer "medecin_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.date "date"
-    t.datetime "debut"
-    t.datetime "fin"
-  end
-
   create_table "horaires", force: :cascade do |t|
     t.boolean "disponible"
     t.boolean "indisponible"
