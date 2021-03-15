@@ -1,10 +1,16 @@
 <div class="container">
   <h2>horaires</h2>
-  <ul class='no-bullet'>
-    <% @horaires.each do |horaire| %>
-      <li>> <%= link_to horaire.date, horaire_path(horaire) %></li>
-      <li><%= horaire.debut %></li>
-      <li><%= horaire.fin %></li>
+
+    <%# Début du calendrier %>
+    <%= month_calendar(events: @consultations) do |date, consultations| %>
+      <%= date.day %>
+      <% consultations.each do |consultation| %>
+        <div>
+          <%= link_to "Cons. n°#{consultation.id}", horaire_path(consultation) %>
+        </div>
+      <% end %>
     <% end %>
+    <%# Fin du calendrier %>
+
   </ul>
 </div>
