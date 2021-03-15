@@ -29,13 +29,13 @@ class HorairesController < ApplicationController
   def update # PATCH
     @horaire.update(horaire_params)
 
-    redirect_to dashboard_path
+    redirect_to horaires_path
   end
 
   def destroy # Destroy a-t-il une utilité ici ? Il faudrait garder une trace des créneaux
     @horaire.destroy
 
-    redirect_to dashboard_path
+    redirect_to horaires_path
   end
 
   private

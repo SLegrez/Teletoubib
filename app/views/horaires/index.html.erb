@@ -1,8 +1,8 @@
 <div class="container">
   <h2>horaires</h2>
-  <ul>
+  <ul class='no-bullet'>
     <% @horaires.each do |horaire| %>
-      <li>> <%= horaire.date %></li>
+      <li>> <%= link_to horaire.date, horaire_path(horaire) %></li>
       <li><%= horaire.debut %></li>
       <li><%= horaire.fin %></li>
     <% end %>

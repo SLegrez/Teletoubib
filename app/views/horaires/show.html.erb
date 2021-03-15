@@ -3,5 +3,11 @@
       <h2><%= @horaire.date %></h2>
       <li><%= @horaire.debut %></li>
       <li><%= @horaire.fin %></li>
+      <%= link_to "Edit #{@horaire.date}", edit_horaire_path(@horaire) %>
+      <br>
+      <%= link_to "Delete #{@horaire.date}",
+            horaire_path(@horaire),
+            method: :delete,
+            data: { confirm: "Êtes vous sûr ?" } %>
   </ul>
 </div>
