@@ -38,7 +38,7 @@ class MeetingsController < ApplicationController
   private
 
   def meeting_params
-    params.require(:meeting).permit(:style, :lien_visio, :debut, :fin, :patient_id, :creneau_id)
+    params.require(:meeting).permit(:style, :lien_visio, :debut, :fin, :patient_id, :horaire_id)
   end
 
   def set_meeting

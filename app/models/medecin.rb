@@ -1,6 +1,6 @@
 class Medecin < ApplicationRecord
-  has_many :creneaux
-  has_many :meetings, through: :creneaux
+  has_many :horaires
+  has_many :meetings, through: :horaires
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'medecins/dashboard', to: 'pages#dashboard'
   resources :medecins do
-    resources :creneaux
+    resources :horaires
   end
   devise_for :medecins
   devise_scope :medecin do

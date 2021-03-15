@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>horaires</h2>
+  <ul>
+    <% @horaires.each do |horaire| %>
+      <li><%= horaire.date %></li>
+      <li><%= horaire.debut %></li>
+      <li><%= horaire.fin %></li>
+      <li><%= horaire.disponible %></li>
+      <li><%= horaire.created_at %></li>
+    <% end %>
+  </ul>
+</div>

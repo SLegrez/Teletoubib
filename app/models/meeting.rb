@@ -1,4 +1,4 @@
 class Meeting < ApplicationRecord
   belongs_to :patient
-  belongs_to :creneau
+  belongs_to :horaire
 end

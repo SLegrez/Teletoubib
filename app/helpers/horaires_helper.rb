@@ -1,0 +1,2 @@
+module HorairesHelper
+end
