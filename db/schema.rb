@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_12_143316) do
+ActiveRecord::Schema.define(version: 2021_03_15_093450) do
 
   create_table "creneaux", force: :cascade do |t|
     t.boolean "disponible"
@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(version: 2021_03_12_143316) do
     t.integer "medecin_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "date"
+    t.datetime "debut"
+    t.datetime "fin"
   end
 
   create_table "medecins", force: :cascade do |t|
